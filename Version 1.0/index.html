@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COVID-19</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <div class="flex items-center">
+        <div class="container max-w-6xl px-5 mx-auto my-16">
+            <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600">Fälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-gray-900"><a id="fälle"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600">Genesen</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-gray-900"><a id="genesen"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600">Todesfälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-gray-900"><a id="todesfälle"></a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container max-w-6xl px-5 mx-auto">
+
+        <select class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-gray-100 text-sm font-normal text-gray-600" id="select">
+            <option value="global">Auswahl</option>
+        </select>
+
+    </div>
+
+    <div class="flex items-center">
+        <div class="container max-w-6xl px-5 mx-auto my-6">
+            <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600">Land</div>
+                    <div class="flex items-center pt-1">
+                        <div class="overflow-auto flex items-center">
+                            <div>
+                                <img class="h-6 mr-2" id="landBild" src="">
+                            </div>
+                            <div class="text-2xl font-bold text-gray-900"><span id="nameland"></span></div>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600">Fälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-gray-900"><a id="landFaelle"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600">Genesen</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-gray-900"><a id="landGenesen"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600">Todesfälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-gray-900"><a id="landtod"></a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 sm:px-8 max-w-6xl mb-15" id="chart"></div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>

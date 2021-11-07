@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COVID-19</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <div class="flex items-center mt-16 mb-3">
+        <div class="container max-w-6xl px-5 mx-auto">
+            <div class="flex items-center pt-1 mb-3">
+                <div class="text-2xl font-bold text-black"><a>Deutschland Statistiken</a></div>
+            </div>
+            <a class="pt-1 pb-1 pl-3 pr-3 text-lg text-white bg-blue-500 rounded-md" id="inzidenz"></a>
+        </div>
+    </div>
+
+    <div class="flex items-center">
+        <div class="container max-w-6xl px-5 mx-auto mt-6 mb-5">
+            <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600 text-regular">Fälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-lg text-white"><a class="mr-2 text-2xl text-black text-bold" id="fälle"></a> <a class="pt-1 pb-1 pl-3 pr-3 bg-gray-900 rounded-md" id="faelleplus"></a> </div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500 text-regular">Genesen</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-lg text-white"><a class="mr-2 text-2xl text-black text-bold" id="genesen"></a> <a class="pt-1 pb-1 pl-3 pr-3 bg-gray-900 rounded-md" id="genesenplus"></a> </div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500 text-regular">Todesfälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-lg text-white"><a class="mr-2 text-2xl text-black text-bold" id="todesfälle"></a> <a class="pt-1 pb-1 pl-3 pr-3 bg-gray-900 rounded-md" id="todesfälleplus"></a> </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center">
+      <div class="container max-w-6xl px-5 mx-auto">
+          <div class="flex items-center pt-1 mb-3">
+              <div class="text-sm font-regular"><a id="dateeeee"></a></div>
+          </div>
+      </div>
+  </div>
+
+
+    <div class="flex items-center mt-20 mb-5">
+        <div class="container max-w-6xl px-5 mx-auto">
+            <div class="flex items-center pt-1">
+                <div class="text-2xl font-bold text-black"><a>Statistiken nach Altersgruppen</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flex items-center mt-5">
+        <div class="container max-w-6xl px-5 mx-auto">
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="flex flex-col">
+    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+        <div class="overflow-hidden border-b border-gray-200">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr>
+                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                  Altersgruppe
+                </th>
+                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                  Fälle (M)
+                </th>
+                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                  Fälle (W)
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+
+              <!-- ! -->
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        0 - 4
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="04M"></a></div>
+                  </td>
+
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="04W"></a></div>
+                </td>
+              </tr>
+              <!-- ! -->
+              <!-- ! -->
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        5 - 14
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="514M"></a></div>
+                  </td>
+
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="514W"></a></div>
+                </td>
+              </tr>
+              <!-- ! -->
+              <!-- ! -->
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        15 - 34
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="1534M"></a></div>
+                  </td>
+
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="1534W"></a></div>
+                </td>
+              </tr>
+              <!-- ! -->
+              <!-- ! -->
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        35 - 59
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="3559M"></a></div>
+                  </td>
+
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="3559W"></a></div>
+                </td>
+              </tr>
+              <!-- ! -->
+              <!-- ! -->
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        60 - 79
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="6079M"></a></div>
+                  </td>
+
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="6079W"></a></div>
+                </td>
+              </tr>
+              <!-- ! -->
+              <!-- ! -->
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="flex items-center">
+                    <div>
+                      <div class="text-sm font-medium text-gray-900">
+                        80+
+                      </div>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <div class="text-sm text-gray-900"><a id="80M"></a></div>
+                </td>
+
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                    <div class="text-sm text-gray-900"><a id="80W"></a></div>
+                </td>
+              </tr>
+              <!-- ! -->
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+    </div>
+
+
+    <div class="flex items-center mt-20 mb-5">
+        <div class="container max-w-6xl px-5 mx-auto">
+            <div class="flex items-center pt-1">
+                <div class="text-2xl font-bold text-black"><a>Impfungen Deutschland</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flex items-center">
+        <div class="container max-w-6xl px-5 mx-auto mt-4 mb-5">
+            <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-600 text-regular">Verabreichte Impfungen</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-lg text-white"><a class="mr-2 text-2xl text-black text-bold" id="verabreicht"></a>  <a class="pt-1 pb-1 pl-3 pr-3 bg-gray-900 rounded-md" id="verabreichtNEU"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500 text-regular">1. Impfung</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-lg text-white"><a class="mr-2 text-2xl text-black text-bold" id="ersteimpfung"></a>  <a class="pt-1 pb-1 pl-3 pr-3 bg-gray-900 rounded-md" id="ersteimpfungNEU"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500 text-regular">2. Impfung</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-lg text-white"><a class="mr-2 text-2xl text-black text-bold" id="zweiteimpfung"></a> <a class="pt-1 pb-1 pl-3 pr-3 bg-gray-900 rounded-md" id="zweiteimpfungNEU"></a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center">
+      <div class="container max-w-6xl px-5 mx-auto">
+          <div class="flex items-center pt-1 mb-3">
+              <div class="text-sm font-regular"><a id="impfquote"></a></div>
+          </div>
+      </div>
+  </div>
+
+
+    <div class="flex items-center mt-20 mb-5">
+        <div class="container max-w-6xl px-5 mx-auto">
+            <div class="flex items-center pt-1">
+                <div class="mb-5 text-2xl font-bold text-black"><a>Inzidenz-Verlauf</a></div>
+            </div>
+
+            <div id="chart"></div>
+
+        </div>
+    </div>
+
+    <div class="flex items-center">
+      <div class="container max-w-6xl px-5 mx-auto">
+          <div class="flex items-center pt-1 mb-3">
+              <div class="text-sm font-regular"><a id="dateInzidenz"></a></div>
+          </div>
+      </div>
+  </div>
+
+
+    <div class="flex items-center mt-20 mb-5">
+        <div class="container max-w-6xl px-5 mx-auto">
+            <div class="flex items-center pt-1">
+                <div class="text-2xl font-bold text-black"><a>Weltweite Statistiken</a></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container max-w-6xl px-5 mx-auto">
+
+        <select class="inline-flex justify-center w-full px-4 py-2 text-sm font-normal text-gray-500 bg-gray-100 border border-gray-200 rounded-md" id="select">
+            <option value="global">Auswahl</option>
+        </select>
+
+    </div>
+
+
+    <div class="flex items-center mb-32">
+        <div class="container max-w-6xl px-5 mx-auto my-6">
+            <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500">Land</div>
+                    <div class="flex items-center pt-1">
+                        <div class="flex items-center overflow-auto">
+                            <div>
+                                <img class="h-6 mr-2" id="landBild" src="">
+                            </div>
+                            <div class="text-2xl font-bold text-black"><span id="nameland"></span></div>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500">Fälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-black"><a id="landFaelle"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500">Genesen</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-black"><a id="landGenesen"></a></div>
+                    </div>
+                </div>
+
+                <div class="p-5 bg-gray-100 rounded shadow-sm">
+                    <div class="text-gray-500">Todesfälle</div>
+                    <div class="flex items-center pt-1">
+                        <div class="text-2xl font-bold text-black"><a id="landtod"></a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
